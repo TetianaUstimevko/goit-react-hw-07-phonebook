@@ -30,7 +30,7 @@ const ContactList = () => {
           number={contact.number}
           key={contact.id}
           id={contact.id}
-          onDeleteContact={handleDeleteContact}
+        
         />
       ))}
     </ul>

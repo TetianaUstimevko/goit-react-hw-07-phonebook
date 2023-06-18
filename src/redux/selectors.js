@@ -1,3 +1,6 @@
-// redux/selectors.jsx
-export const selectContacts = state => state.list;
-export const selectFilter = state => state.filter;
+export const selectContacts = (state) => state.contacts.contacts;
+export const selectFilter = (state) => state.contacts.filter;
+// Вибірка стану завантаження
+export const selectLoading = (state) => state.contacts.isLoading;
+// Вибірка стану помилки
+export const selectError = (state) => state.contacts.error;
