@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setFilter } from 'redux/contactsSlice';
 
-const Filter = ({ onChange }) => {
+const Filter = () => {
   const dispatch = useDispatch();
 
   const handleChange = (event) => {

@@ -37,7 +37,7 @@ const ContactForm = () => {
         <input
           className={s.inputName}
           value={name}
-          onChange={e => setName(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
           type="text"
           name="name"
           required
@@ -48,7 +48,7 @@ const ContactForm = () => {
         <input
           className={s.inputNumber}
           value={number}
-          onChange={e => setNumber(e.target.value)}
+          onChange={(e) => setNumber(e.target.value)}
           type="tel"
           name="number"
           required

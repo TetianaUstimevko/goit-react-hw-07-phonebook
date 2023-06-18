@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ContactItem from 'components/ContactItem/ContactItem';
-import { deleteContact } from 'redux/contactsSlice';
+import { fetchContacts, deleteContact } from 'redux/contactsSlice';
 import { selectContacts, selectFilter } from 'redux/selectors';
 
 const ContactList = () => {
@@ -10,15 +10,21 @@ const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const filter = useSelector(selectFilter);
 
+  useEffect(() => {
+    dispatch(fetchContacts());
+  }, [dispatch]);
+
   const handleDeleteContact = contactId => {
     dispatch(deleteContact(contactId));
   };
 
-  const filterContacts = contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
+  const filterContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase())
+  );
 
   return (
     <ul>
-      {filterContacts.map(contact => (
+      {filterContacts.map((contact) => (
         <ContactItem
           name={contact.name}
           number={contact.number}
@@ -30,6 +36,5 @@ const ContactList = () => {
     </ul>
   );
 };
-
 
 export default ContactList;
