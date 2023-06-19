@@ -4,7 +4,7 @@ import ContactList from './ContactList/ContactList';
 import ContactForm from './ContactForm/ContactForm';
 import Filter from './Filter/Filter';
 import Notification from './Notification/Notification';
-import { fetchContacts } from 'redux/contactsSlice';
+import { fetchContacts } from 'redux/operations';
 import s from './App.module.css';
 import { selectContacts, selectLoading, selectError } from 'redux/selectors';
 
